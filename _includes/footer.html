@@ -1,14 +1,15 @@
 <!-- ======================================================
      FOOTER: shown at the bottom of every page
-     "Last updated" changes by itself whenever the site changes.
+     "Last inscribed" changes by itself whenever the site changes.
      ====================================================== -->
 <div id="footer">
   <div class="container">
+    <p class="footer-cuneiform" aria-hidden="true">𒀭 𒈹 𒀭 𒂗 𒆤 𒀭 𒈹 𒀭</p>
     <p>
       &copy; {{ site.time | date: "%Y" }} {{ site.title }}
-      &nbsp;|&nbsp; <a href="mailto:{{ site.email }}">{{ site.email }}</a>
-      &nbsp;|&nbsp; <a href="https://www.instagram.com/{{ site.instagram }}/" target="_blank" rel="noopener">Instagram</a>
+      &nbsp;&#10042;&nbsp; <a href="mailto:{{ site.email }}">{{ site.email }}</a>
+      &nbsp;&#10042;&nbsp; <a href="https://www.instagram.com/{{ site.instagram }}/" target="_blank" rel="noopener">Instagram</a>
     </p>
-    <p>Last updated: {{ site.time | date: "%B %-d, %Y" }}</p>
+    <p>Last inscribed upon the clay: {{ site.time | date: "%B %-d, %Y" }}</p>
   </div>
 </div>

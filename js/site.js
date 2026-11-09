@@ -17,6 +17,7 @@
   var SITE = window.SITE || {};
   var TEMPLATES = window.TEMPLATES || {};
   var LANGUAGE = "en-US";        // Language used when writing out dates
+  var COUNTER_WORD = "Tablet";   // Slideshow counter: "Tablet 1 of 3" (change to "Photo" for plain)
 
   /* Button names for streaming columns. A column called stream_youtube
      becomes a "YouTube" button. To add a service, add a column to
@@ -590,7 +591,7 @@
     if (photos.length > 1) {
       html += '<div class="carousel-controls">' +
                 '<button type="button" class="carousel-prev">&laquo; Prev</button> ' +
-                '<span class="carousel-count" aria-live="polite">Photo 1 of ' + photos.length + "</span> " +
+                '<span class="carousel-count" aria-live="polite">' + COUNTER_WORD + " 1 of " + photos.length + "</span> " +
                 '<button type="button" class="carousel-next">Next &raquo;</button>' +
               "</div>";
     }
@@ -607,7 +608,7 @@
       slides[current].classList.remove("active");
       current = (n + slides.length) % slides.length;
       slides[current].classList.add("active");
-      count.textContent = "Photo " + (current + 1) + " of " + slides.length;
+      count.textContent = COUNTER_WORD + " " + (current + 1) + " of " + slides.length;
     }
     function play() { if (!reduceMotion) { stop(); timer = setInterval(function () { show(current + 1); }, seconds * 1000); } }
     function stop() { if (timer) clearInterval(timer); timer = null; }
