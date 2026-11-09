@@ -10,8 +10,8 @@
 # ---------------------------------------------------------------------
 #  1. BUSINESS NAME
 # ---------------------------------------------------------------------
-title: "Your Show Co."                       # Shown in browser tabs and the footer
-description: "Live shows, house bands, and good nights out."   # Shown in Google results
+title: "The Ziggurat"                       # Shown in browser tabs and the footer
+description: "Seattle DIY show production and recording studio"   # Shown in Google results
 
 
 # ---------------------------------------------------------------------
@@ -34,9 +34,9 @@ favicon: "images/logo/favicon.png"           # Browser tab icon (square, 32x32 o
 # ---------------------------------------------------------------------
 #  4. CONTACT INFO
 # ---------------------------------------------------------------------
-email: "hello@your-domain.com"
-instagram: "yourshowco"                      # Username only, without the @
-interest_form_url: "https://forms.gle/REPLACE-WITH-YOUR-GOOGLE-FORM-LINK"
+email: "ziggurat.booking@gmail.com"
+instagram: "the.ziggurat"                      # Username only, without the @
+interest_form_url: "https://forms.gle/HLguUrFV1nmpH2QX6"
 
 
 # ---------------------------------------------------------------------
@@ -46,7 +46,7 @@ interest_form_url: "https://forms.gle/REPLACE-WITH-YOUR-GOOGLE-FORM-LINK"
 #  2) Paste that key between the quotes below.
 #  Both forms on the Contact page will then email you.
 # ---------------------------------------------------------------------
-web3forms_access_key: ""
+web3forms_access_key: "a7517ecc-fab1-4886-8cfe-a7ddef9084b0"
 form_action: "https://api.web3forms.com/submit"
 
 
@@ -54,7 +54,7 @@ form_action: "https://api.web3forms.com/submit"
 #  6. SHOWS, BANDS AND PHOTOS
 # ---------------------------------------------------------------------
 home_upcoming_shows: 3             # How many upcoming shows the Main Page lists
-past_shows_order: "oldest_first"   # "oldest_first" or "newest_first"
+past_shows_order: "newest_first"   # "oldest_first" or "newest_first"
 currency_symbol: "$"               # Added when a price is typed as a plain number (10 -> $10)
 carousel_seconds: 5                # Seconds each photo stays up in the carousels
 default_poster: "images/posters/default-poster.jpg"      # Used when a show has no poster
@@ -64,7 +64,7 @@ default_band_logo: "images/band-logos/default-logo.png"  # Used when a band has 
 # ---------------------------------------------------------------------
 #  7. BLOG
 # ---------------------------------------------------------------------
-timezone: "America/New_York"       # Your time zone, for blog post times
+timezone: "America/Los_Angeles"       # Your time zone, for blog post times
 post_date_format: "%B %-d, %Y at %-I:%M %p"    # Looks like: November 5, 2026 at 3:30 PM
 
 
