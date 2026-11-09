@@ -10,8 +10,8 @@
 # ---------------------------------------------------------------------
 #  1. BUSINESS NAME
 # ---------------------------------------------------------------------
-title: "Your Show Co."                       # Shown in browser tabs and the footer
-description: "Live shows, house bands, and good nights out."   # Shown in Google results
+title: "The Ziggurat"                       # Shown in browser tabs and the footer
+description: "Seattle DIY shows and recording studio"   # Shown in Google results
 
 
 # ---------------------------------------------------------------------
@@ -34,9 +34,9 @@ favicon: "images/logo/favicon.png"           # Browser tab icon (square, 32x32 o
 # ---------------------------------------------------------------------
 #  4. CONTACT INFO
 # ---------------------------------------------------------------------
-email: "hello@your-domain.com"
-instagram: "yourshowco"                      # Username only, without the @
-interest_form_url: "https://forms.gle/REPLACE-WITH-YOUR-GOOGLE-FORM-LINK"
+email: "ziggurat.booking@gmail.com"
+instagram: "the.ziggurat"                      # Username only, without the @
+interest_form_url: "https://forms.gle/UakkwahUsjhJZSfb8"
 
 
 # ---------------------------------------------------------------------
@@ -46,7 +46,7 @@ interest_form_url: "https://forms.gle/REPLACE-WITH-YOUR-GOOGLE-FORM-LINK"
 #  2) Paste that key between the quotes below.
 #  Both forms on the Contact page will then email you.
 # ---------------------------------------------------------------------
-web3forms_access_key: ""
+web3forms_access_key: "a7517ecc-fab1-4886-8cfe-a7ddef9084b0"
 form_action: "https://api.web3forms.com/submit"
 
 
