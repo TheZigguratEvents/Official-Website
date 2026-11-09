@@ -1,0 +1,15 @@
+<!-- ======================================================
+     SITE DIRECTORY: a list of every page in the menu
+     (except the home page), with each page's "description".
+     ====================================================== -->
+<ul class="site-directory">
+  {%- assign nav_pages = site.pages | where: "nav", true | sort: "nav_order", "last" -%}
+  {%- for p in nav_pages -%}
+    {%- unless p.url == "/" %}
+  <li>
+    <a href="{{ p.url | relative_url }}">{{ p.menu_title | default: p.title }}</a>
+    {%- if p.description %}<br><span class="muted">{{ p.description }}</span>{% endif %}
+  </li>
+    {%- endunless -%}
+  {%- endfor %}
+</ul>

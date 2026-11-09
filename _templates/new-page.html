@@ -1,0 +1,43 @@
+---
+title: New Page Title
+nav: true
+nav_order: 8
+description: "One sentence about this page for the Site Directory."
+---
+{% raw %}
+<!-- ======================================================
+     HOW TO ADD A NEW PAGE
+     1. Copy this file to the main folder of the site (next to index.html).
+     2. Rename it, e.g. merch.html (lowercase, no spaces).
+     3. Edit the lines between the --- marks above:
+          title        the page name (menu, browser tab)
+          nav          true = show in the menu and Site Directory
+                       false = hidden page (people need the link)
+          nav_order    position in the menu (1 = first)
+          description  shown under the link in the Site Directory
+     4. Write your page below. It automatically gets the logo,
+        menu, footer, and styling.
+
+     HANDY BUILDING BLOCKS you can paste into any page:
+
+     A photo slideshow of every image in a folder:
+       {% include carousel.html folder="images/carousel/YOUR-FOLDER" %}
+
+     The upcoming shows list:
+       <div data-render="upcoming-shows" data-template="upcomingShow"></div>
+       Add data-limit="3" to show only the next 3.
+
+     The past shows list:
+       <div data-render="past-shows" data-template="pastShow"></div>
+
+     The house bands list:
+       <div data-render="house-bands" data-template="bandCard"></div>
+
+     A photo beside your text:
+       <div class="photo photo-right"><img src="images/your-photo.jpg" alt=""></div>
+     ====================================================== -->
+{% endraw %}
+
+<h1 class="page-title">New Page Title</h1>
+
+<p>Write your content here.</p>

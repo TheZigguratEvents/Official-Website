@@ -1,0 +1,81 @@
+---
+title: Contact
+nav: true
+nav_order: 6
+description: "Email, Instagram, booking inquiries and our mailing list."
+---
+<!-- ======================================================
+     CONTACT
+     Email, Instagram and the interest-form link come from
+     _config.yml. The two forms email you through Web3Forms
+     once you paste your access key into _config.yml.
+     ====================================================== -->
+
+<h1 class="page-title">Contact</h1>
+
+<div class="columns">
+
+  <!-- ---------- CONTACT INFO ---------- -->
+  <div class="column-main">
+    <h2>Get in Touch</h2>
+    <table class="facts">
+      <tr><th>Email</th><td><a href="mailto:{{ site.email }}">{{ site.email }}</a></td></tr>
+      <tr><th>Instagram</th><td><a href="https://www.instagram.com/{{ site.instagram }}/" target="_blank" rel="noopener">@{{ site.instagram }}</a></td></tr>
+    </table>
+
+    <!-- ---------- INTEREST FORM LINK (set interest_form_url in _config.yml) ---------- -->
+    <p class="interest-form">
+      <a href="{{ site.interest_form_url }}" target="_blank" rel="noopener">Fill out our interest form</a>
+    </p>
+    <p class="muted">Booking a show, playing one of ours, or working with us? The interest form is the quickest way to reach us.</p>
+
+    <!-- ---------- CONTACT FORM (emails you) ---------- -->
+    <h2>Send Us a Message</h2>
+    <form class="site-form" data-form="contact" action="{{ site.form_action }}" method="POST"
+          data-success="Thanks! Your message is on its way. We'll get back to you soon.">
+      <input type="hidden" name="access_key" value="{{ site.web3forms_access_key }}">
+      <input type="hidden" name="subject" value="New message from the {{ site.title }} website">
+      <input type="hidden" name="from_name" value="{{ site.title }} website">
+      <input type="hidden" name="redirect" value="">
+      <input type="checkbox" name="botcheck" class="bot-trap" tabindex="-1" autocomplete="off">
+
+      <label for="contact-name">Your name</label>
+      <input type="text" id="contact-name" name="name" required>
+
+      <label for="contact-email">Your email</label>
+      <input type="email" id="contact-email" name="email" required>
+
+      <label for="contact-message">Message</label>
+      <textarea id="contact-message" name="message" rows="6" required></textarea>
+
+      <button type="submit" class="button button-primary">Send message</button>
+      <p class="form-status" role="status"></p>
+    </form>
+  </div>
+
+  <!-- ---------- MAILING LIST (emails you each new signup) ---------- -->
+  <div class="column-side">
+    <div class="sidebar-box">
+      <h2>Join Our Mailing List</h2>
+      <p>Get show announcements before anyone else.</p>
+      <form class="site-form" data-form="mailing-list" action="{{ site.form_action }}" method="POST"
+            data-success="You're on the list! Thanks for signing up.">
+        <input type="hidden" name="access_key" value="{{ site.web3forms_access_key }}">
+        <input type="hidden" name="subject" value="New mailing list signup">
+        <input type="hidden" name="from_name" value="{{ site.title }} website">
+        <input type="hidden" name="redirect" value="">
+        <input type="checkbox" name="botcheck" class="bot-trap" tabindex="-1" autocomplete="off">
+
+        <label for="list-name">Name</label>
+        <input type="text" id="list-name" name="name" required>
+
+        <label for="list-email">Email</label>
+        <input type="email" id="list-email" name="email" required>
+
+        <button type="submit" class="button button-primary">Sign me up</button>
+        <p class="form-status" role="status"></p>
+      </form>
+    </div>
+  </div>
+
+</div>

@@ -1,0 +1,47 @@
+---
+title: Home
+nav: true
+nav_order: 1
+---
+<!-- ======================================================
+     MAIN PAGE
+     ====================================================== -->
+
+<!-- ---------- MAIN TITLE (edit the text) ---------- -->
+<h1 class="page-title">Welcome to Your Show Co.</h1>
+
+<!-- ---------- INTRODUCTION (edit or add paragraphs) ---------- -->
+<div class="intro">
+  <p>
+    REPLACE THIS INTRODUCTION. Tell visitors who you are in two or three sentences:
+    what kind of shows you put on, where they happen, and why they should come.
+    You can add more paragraphs by copying the &lt;p&gt; ... &lt;/p&gt; lines.
+  </p>
+</div>
+
+<!-- ---------- PHOTO CAROUSEL ----------
+     Plays every photo in the folder images/carousel/home/
+     To change photos, add or delete files in that folder. -->
+{% include carousel.html folder="images/carousel/home" %}
+
+<div class="columns">
+
+  <!-- ---------- OUR UPCOMING SHOWS ----------
+       Filled in automatically from data/shows.csv.
+       The number shown is set by home_upcoming_shows in _config.yml. -->
+  <div class="column-main">
+    <h2>Our Upcoming Shows</h2>
+    <div data-render="upcoming-shows" data-template="showTile" data-limit="{{ site.home_upcoming_shows | default: 3 }}"></div>
+    <p class="more-link"><a href="upcoming-shows.html" class="button">See all upcoming shows &raquo;</a></p>
+  </div>
+
+  <!-- ---------- SITE DIRECTORY ----------
+       Lists every page in the menu automatically. -->
+  <div class="column-side">
+    <div class="sidebar-box">
+      <h2>Site Directory</h2>
+      {% include site-directory.html %}
+    </div>
+  </div>
+
+</div>

@@ -1,0 +1,544 @@
+/* =========================================================================
+   SITE.CSS — every style on the site (early-2000s look)
+   -------------------------------------------------------------------------
+   Quick changes: edit the COLORS AND FONTS section right below.
+   Everything else is grouped by page section, top to bottom.
+   ========================================================================= */
+
+
+/* ---------- COLORS AND FONTS ---------- */
+:root {
+  --page-width:    780px;     /* fits an 800x600 screen, very 2002 */
+  --page-bg:       #000000;   /* behind everything */
+  --panel-bg:      #1c1c1c;   /* the main content area */
+  --cell-bg:       #262626;   /* boxes and table cells */
+  --line:          #444444;   /* borders */
+  --text:          #d8d8d8;
+  --muted:         #9a9a9a;
+  --link:          #ffcc33;   /* gold links */
+  --link-visited:  #e0aa22;
+  --link-hover:    #ffffff;
+  --title:         #ff9933;   /* page titles */
+  --bar-bg:        #660000;   /* title bars on section headings */
+  --bar-border:    #993333;
+  --header-bg:     #2a0000;   /* behind the logo */
+  --button-gray:   #c0c0c0;   /* Windows-style buttons and menu */
+  --menu-select:   #000080;   /* highlighted menu item */
+  --body-font:     Verdana, Tahoma, Geneva, Arial, sans-serif;
+  --title-font:    Impact, "Arial Black", "Arial Narrow", sans-serif;
+  --button-font:   Tahoma, Verdana, Arial, sans-serif;
+}
+
+
+/* ---------- BASICS ---------- */
+* { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  padding: 12px 0 0;
+  font: 12px/1.55 var(--body-font);
+  color: var(--text);
+  background-color: var(--page-bg);
+  /* tiled diagonal pinstripe, like a repeating background .gif */
+  background-image: repeating-linear-gradient(45deg, #111 0 2px, #000 2px 5px);
+}
+
+a         { color: var(--link); text-decoration: underline; }
+a:visited { color: var(--link-visited); }
+a:hover   { color: var(--link-hover); }
+
+img { max-width: 100%; height: auto; }
+
+h1, h2, h3 { line-height: 1.25; }
+
+/* Section headings are solid title bars */
+h2 {
+  margin: 22px 0 10px;
+  padding: 3px 8px;
+  font: bold 11px var(--body-font);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #ffffff;
+  background: var(--bar-bg);
+  border: 1px solid var(--bar-border);
+}
+h3 {
+  margin: 14px 0 6px;
+  font: bold 12px var(--body-font);
+  color: var(--title);
+  text-transform: uppercase;
+}
+
+.page-title {
+  margin: 0 0 14px;
+  padding-bottom: 6px;
+  font: normal 30px/1.1 var(--title-font);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--title);
+  border-bottom: 1px dashed #555;
+}
+
+.lead  { font-size: 13px; }
+.muted { color: var(--muted); }
+.clear { clear: both; }
+
+.label {
+  display: inline-block;
+  margin: 0 0 6px;
+  padding: 1px 5px;
+  font: bold 10px var(--body-font);
+  text-transform: uppercase;
+  color: #ffffff;
+  background: #cc0000;
+  border: 1px solid #ff6666;
+}
+
+.container {
+  max-width: var(--page-width);
+  margin: 0 auto;
+}
+
+
+/* ---------- HEADER (logo + menu) ---------- */
+/* The header and content are stacked into one centered column. */
+#header {
+  max-width: var(--page-width);
+  margin: 0 auto;
+  background: var(--header-bg);
+  border: 1px solid var(--bar-border);
+  border-bottom: 4px double var(--bar-border);
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;   /* logo left, menu right */
+  min-height: 84px;
+  padding: 0 14px;
+}
+
+.logo-link { display: block; padding: 10px 0; }
+.logo { display: block; max-height: 64px; width: auto; border: 0; }
+
+
+/* ---------- DROP-DOWN MENU (Windows-style) ---------- */
+.menu { position: relative; }
+
+.menu summary {
+  list-style: none;
+  cursor: pointer;
+  padding: 3px 14px;
+  font: bold 11px var(--button-font);
+  color: #000000;
+  background: var(--button-gray);
+  border: 2px outset #eeeeee;
+  user-select: none;
+}
+.menu summary::-webkit-details-marker { display: none; }
+.menu summary::after { content: " \25BC"; font-size: 9px; }   /* the little down arrow */
+.menu[open] summary { border-style: inset; }
+
+.menu ul {
+  position: absolute;
+  right: 0;
+  top: calc(100% + 2px);
+  z-index: 100;
+  min-width: 180px;
+  margin: 0;
+  padding: 2px;
+  list-style: none;
+  background: var(--button-gray);
+  border: 2px outset #eeeeee;
+  box-shadow: 2px 2px 0 #000000;
+}
+.menu li a {
+  display: block;
+  padding: 3px 14px;
+  font: 11px var(--button-font);
+  color: #000000;
+  text-decoration: none;
+}
+.menu li a:hover {
+  color: #ffffff;
+  background: var(--menu-select);
+}
+.menu li a.current { font-weight: bold; }
+
+
+/* ---------- MAIN CONTENT AREA ---------- */
+#main {
+  margin: 0 auto;
+  padding: 16px 18px 20px;
+  background: var(--panel-bg);
+  border: 1px solid var(--line);
+  border-top: 0;
+}
+
+
+/* ---------- TWO COLUMNS (main + sidebar) ---------- */
+.columns { display: flex; gap: 18px; align-items: flex-start; }
+.column-main { flex: 2; min-width: 0; }
+.column-side { flex: 1; min-width: 0; }
+
+.sidebar-box {
+  margin-top: 22px;
+  padding: 0 10px 10px;
+  background: var(--cell-bg);
+  border: 1px solid var(--line);
+}
+.sidebar-box h2 { margin: 0 -10px 10px; border-width: 0 0 1px; }
+.sidebar-box ul { padding-left: 18px; }
+
+
+/* ---------- MAIN PAGE ---------- */
+.intro p { font-size: 13px; }
+
+.site-directory,
+.sidebar-box .site-directory { margin: 0; padding-left: 0; list-style: none; }
+.site-directory li {
+  padding: 5px 0;
+  border-bottom: 1px dotted #555;
+}
+.site-directory li:last-child { border-bottom: 0; }
+.site-directory li > a { font-weight: bold; }
+.site-directory li > a::before { content: "\00BB  "; }   /* » before each link */
+.site-directory .muted { font-size: 10px; }
+
+.more-link { margin-top: 12px; }
+
+
+/* ---------- BUTTONS (beveled, Windows-style) ---------- */
+.button,
+.button:visited {
+  display: inline-block;
+  padding: 3px 12px;
+  font: bold 11px var(--button-font);
+  color: #000000;
+  text-decoration: none;
+  background: var(--button-gray);
+  border: 2px outset #eeeeee;
+  cursor: pointer;
+}
+.button:hover  { color: #000000; background: #d4d4d4; }
+.button:active { border-style: inset; }
+
+.button-primary,
+.button-primary:visited {
+  color: #ffffff;
+  background: #990000;
+  border-color: #cc6666;
+}
+.button-primary:hover { color: #ffffff; background: #bb0000; }
+.button[disabled] { color: #777777; cursor: default; }
+
+.button-small { padding: 1px 8px; font-size: 10px; margin: 0 3px 5px 0; }
+
+
+/* ---------- FACT TABLES (date / time / price ...) ---------- */
+/* The gaps between cells show the table's dark background: an old
+   cellspacing="1" trick that draws thin grid lines. */
+.facts {
+  border-collapse: separate;
+  border-spacing: 1px;
+  margin: 4px 0 12px;
+  background: #4a4a4a;
+}
+.facts th {
+  width: 82px;
+  padding: 3px 8px;
+  text-align: left;
+  vertical-align: top;
+  font: bold 10px var(--body-font);
+  text-transform: uppercase;
+  color: var(--title);
+  background: #303030;
+}
+.facts td {
+  padding: 3px 10px;
+  vertical-align: top;
+  background: #161616;
+}
+.facts.big td { font-size: 13px; }
+
+
+/* ---------- SHOW LISTS (Upcoming + Past Shows pages) ---------- */
+.show-row {
+  padding: 14px 0;
+  border-bottom: 1px dashed #555;
+}
+.show-row:last-of-type { border-bottom: 0; }
+
+.show-poster {
+  float: left;
+  width: 150px;
+  margin-right: 16px;
+}
+.show-poster img {
+  display: block;
+  width: 100%;
+  border: 2px solid #666666;
+}
+.show-poster:hover img { border-color: var(--link); }
+.show-info { overflow: hidden; }
+.show-title { margin: 0 0 6px; font: bold 16px Arial, Helvetica, sans-serif; text-transform: none; }
+.show-row.past .show-poster img { filter: grayscale(40%); }
+
+
+/* ---------- SHOW TILES (Main Page, band pages) ---------- */
+.rendered-showTile,
+.tile-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.show-tile,
+.show-tile:visited {
+  display: block;
+  width: calc(33.333% - 7px);
+  padding: 6px;
+  color: var(--text);
+  text-decoration: none;
+  background: var(--cell-bg);
+  border: 1px solid var(--line);
+}
+.show-tile:hover { color: var(--text); border-color: var(--link); }
+.show-tile img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 3 / 4;          /* change to taste, e.g. 1 / 1 for square */
+  object-fit: contain;
+  background: #000000;
+  border: 1px solid #555555;
+}
+.show-tile span { display: block; }
+.tile-title    { margin-top: 6px; font-weight: bold; color: var(--link); text-decoration: underline; }
+.tile-date     { font-size: 11px; font-weight: bold; }
+.tile-time     { font-size: 11px; }
+.tile-location { font-size: 10px; color: var(--muted); }
+
+
+/* ---------- A SHOW'S OWN PAGE ---------- */
+.back-link { margin: 0 0 10px; font-size: 11px; }
+
+.poster-box { margin: 0 0 16px; text-align: center; }
+.poster-box img {
+  display: block;
+  width: 100%;
+  border: 2px solid #666666;
+}
+.poster-box a:hover img { border-color: var(--link); }
+.caption { margin: 4px 0 0; font-size: 10px; color: var(--muted); }
+
+.description p { margin: 0 0 1em; }
+
+
+/* ---------- HOUSE BANDS ---------- */
+.rendered-bandCard {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.band-card,
+.band-card:visited {
+  display: block;
+  width: calc(33.333% - 8px);
+  padding: 8px;
+  text-align: center;
+  color: var(--text);
+  text-decoration: none;
+  background: var(--cell-bg);
+  border: 1px solid var(--line);
+}
+.band-card:hover { color: var(--text); border-color: var(--link); }
+.band-card img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: contain;
+  background: #000000;
+}
+.band-card span { display: block; }
+.band-name  { margin-top: 8px; font: bold 13px var(--body-font); text-transform: uppercase; color: var(--link); text-decoration: underline; }
+.band-genre { color: var(--muted); font-size: 11px; }
+
+
+/* ---------- A BAND'S OWN PAGE ---------- */
+.band-header { margin-bottom: 14px; }
+.band-header .band-logo {
+  float: left;
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  margin-right: 16px;
+  background: #000000;
+  border: 2px solid #666666;
+}
+.band-header .page-title { border-bottom: 0; margin: 10px 0 0; padding: 0; }
+.band-header .band-genre { margin: 2px 0 0; font-size: 13px; }
+.streaming { line-height: 2; }
+
+
+/* ---------- PHOTO SLIDESHOW ---------- */
+.carousel { margin: 6px 0 22px; }
+.carousel-frame {
+  position: relative;
+  aspect-ratio: 16 / 7;          /* width / height of the slideshow */
+  overflow: hidden;
+  background: #000000;
+  border: 4px ridge #777777;
+}
+.carousel .slide {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;             /* "contain" shows whole photos with black bars */
+  opacity: 0;                    /* photos switch instantly, no fade */
+}
+.carousel .slide.active { opacity: 1; }
+
+.carousel-controls {
+  margin-top: 6px;
+  text-align: center;
+  font: 10px var(--body-font);
+  color: var(--muted);
+}
+.carousel-controls button {
+  padding: 1px 10px;
+  font: bold 10px var(--button-font);
+  color: #000000;
+  background: var(--button-gray);
+  border: 2px outset #eeeeee;
+  cursor: pointer;
+}
+.carousel-controls button:active { border-style: inset; }
+.carousel-count { display: inline-block; min-width: 90px; }
+
+
+/* ---------- ABOUT PAGE PHOTOS ---------- */
+.photo { width: 40%; margin-bottom: 12px; }
+.photo-right { float: right; margin-left: 16px; }
+.photo-left  { float: left;  margin-right: 16px; }
+.photo img {
+  display: block;
+  width: 100%;
+  border: 2px solid #666666;
+}
+
+
+/* ---------- CONTACT PAGE + FORMS ---------- */
+.interest-form a {
+  display: inline-block;
+  margin: 6px 0 2px;
+  font-size: 15px;
+  font-weight: bold;
+}
+.interest-form a::before { content: "\00BB  "; }
+
+.site-form label { display: block; margin: 10px 0 3px; font-weight: bold; font-size: 11px; }
+.site-form input[type="text"],
+.site-form input[type="email"],
+.site-form textarea {
+  display: block;
+  width: 100%;
+  padding: 3px 4px;
+  font: 12px var(--button-font);
+  color: #000000;
+  background: #ffffff;
+  border: 2px inset #aaaaaa;
+  border-radius: 0;
+}
+.site-form input:focus,
+.site-form textarea:focus {
+  outline: 0;
+  background: #ffffcc;           /* pale yellow when typing, a classic */
+}
+.site-form .button { margin-top: 12px; }
+.bot-trap { display: none !important; }
+
+.form-status { min-height: 1em; margin: 8px 0 0; font-weight: bold; font-size: 11px; }
+.form-status.success { color: #66ff66; }
+.form-status.error   { color: #ff6666; }
+
+
+/* ---------- BLOG ---------- */
+.post-title { margin: 0 0 4px; font: bold 18px Arial, Helvetica, sans-serif; color: var(--title); text-transform: none; }
+.post-title a { color: var(--title); }
+h2.post-title { padding: 0; background: none; border: 0; letter-spacing: 0; }
+.post-meta { margin: 0 0 12px; font-size: 10px; color: var(--muted); }
+.latest-post {
+  padding-bottom: 8px;
+  margin-bottom: 8px;
+  border-bottom: 1px dashed #555;
+}
+.post-body img {
+  display: block;
+  margin: 8px 0;
+  border: 2px solid #666666;
+}
+
+.post-list {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 1px;
+  background: #4a4a4a;
+}
+.post-list th {
+  padding: 3px 8px;
+  text-align: left;
+  font: bold 10px var(--body-font);
+  text-transform: uppercase;
+  color: var(--title);
+  background: #303030;
+}
+.post-list td { padding: 4px 8px; background: #161616; }
+.post-list tr:nth-child(odd) td { background: #202020; }
+.post-list .post-meta { margin: 0; white-space: nowrap; }
+
+.post-nav { margin-top: 24px; padding-top: 8px; border-top: 1px dashed #555; overflow: hidden; font-size: 11px; }
+.post-nav .newer { float: right; }
+
+
+/* ---------- NOTICES ---------- */
+.notice {
+  padding: 8px 10px;
+  margin: 10px 0;
+  color: #ffff99;
+  background: #333300;
+  border: 1px solid #777700;
+}
+.notice ul { margin: 6px 0 0; padding-left: 20px; }
+.notice-warning { color: #ffcccc; background: #440000; border-color: #aa3333; }
+
+
+/* ---------- FOOTER ---------- */
+#footer {
+  padding: 8px 0 24px;
+  font-size: 10px;
+  text-align: center;
+  color: #888888;
+}
+#footer .container {
+  padding-top: 6px;
+}
+#footer p { margin: 0 0 2px; }
+#footer a { color: #aaaaaa; }
+
+
+/* ---------- PHONES AND SMALL SCREENS ---------- */
+/* Real early-2000s sites didn't do this, but phones need it. */
+@media (max-width: 800px) {
+  body { padding-top: 0; }
+  #header, #main { border-left: 0; border-right: 0; }
+  #main { padding: 12px 10px 16px; }
+  .columns { display: block; }
+  .page-title { font-size: 24px; }
+  .logo { max-height: 50px; }
+  .show-poster { width: 110px; margin-right: 12px; }
+  .show-tile, .band-card { width: calc(50% - 6px); }
+  .photo, .photo-right, .photo-left { float: none; width: 100%; margin: 0 0 12px; }
+  .carousel-frame { aspect-ratio: 4 / 3; }
+}

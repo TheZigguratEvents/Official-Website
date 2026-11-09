@@ -1,0 +1,14 @@
+<!-- ======================================================
+     FOOTER: shown at the bottom of every page
+     "Last updated" changes by itself whenever the site changes.
+     ====================================================== -->
+<div id="footer">
+  <div class="container">
+    <p>
+      &copy; {{ site.time | date: "%Y" }} {{ site.title }}
+      &nbsp;|&nbsp; <a href="mailto:{{ site.email }}">{{ site.email }}</a>
+      &nbsp;|&nbsp; <a href="https://www.instagram.com/{{ site.instagram }}/" target="_blank" rel="noopener">Instagram</a>
+    </p>
+    <p>Last updated: {{ site.time | date: "%B %-d, %Y" }}</p>
+  </div>
+</div>

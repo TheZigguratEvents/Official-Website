@@ -1,0 +1,22 @@
+---
+layout: default
+---
+<!-- ======================================================
+     BLOG POST PAGE
+     Used for every file in the _posts folder.
+     ====================================================== -->
+
+<p class="back-link"><a href="blog.html">&laquo; Back to the blog</a></p>
+
+<div class="post">
+  <h1 class="post-title">{{ page.title }}</h1>
+  <p class="post-meta">Posted {{ page.date | date: site.post_date_format }}{% if page.author %} by {{ page.author }}{% endif %}</p>
+  <div class="post-body">
+    {{ content }}
+  </div>
+</div>
+
+<div class="post-nav">
+  {% if page.previous %}<a class="older" href="{{ page.previous.url | relative_url }}">&laquo; {{ page.previous.title }}</a>{% endif %}
+  {% if page.next %}<a class="newer" href="{{ page.next.url | relative_url }}">{{ page.next.title }} &raquo;</a>{% endif %}
+</div>

@@ -1,0 +1,43 @@
+---
+title: Blog
+nav: true
+nav_order: 7
+description: "News and stories from behind the scenes."
+---
+<!-- ======================================================
+     BLOG
+     Posts are the files in the _posts folder. The newest one
+     is shown in full here; every post is listed underneath.
+     To write a post, see _templates/new-blog-post.md
+     ====================================================== -->
+
+<h1 class="page-title">Blog</h1>
+
+{%- assign latest = site.posts | first -%}
+{%- if latest %}
+
+<!-- ---------- NEWEST POST, IN FULL ---------- -->
+<div class="post latest-post">
+  <p class="label">Latest post</p>
+  <h2 class="post-title"><a href="{{ latest.url | relative_url }}">{{ latest.title }}</a></h2>
+  <p class="post-meta">Posted {{ latest.date | date: site.post_date_format }}{% if latest.author %} by {{ latest.author }}{% endif %}</p>
+  <div class="post-body">
+    {{ latest.content }}
+  </div>
+</div>
+
+<!-- ---------- ALL POSTS ---------- -->
+<h2>All Posts</h2>
+<table class="post-list">
+  <tr><th>Title</th><th>Posted</th></tr>
+  {%- for post in site.posts %}
+  <tr>
+    <td><a href="{{ post.url | relative_url }}">{{ post.title }}</a></td>
+    <td class="post-meta">{{ post.date | date: site.post_date_format }}</td>
+  </tr>
+  {%- endfor %}
+</table>
+
+{%- else %}
+<p>No posts yet. Check back soon!</p>
+{%- endif %}

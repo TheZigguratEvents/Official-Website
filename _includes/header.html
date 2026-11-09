@@ -1,0 +1,24 @@
+<!-- ======================================================
+     HEADER: logo (top left) + drop-down menu
+     The menu builds itself from every page that has
+     "nav: true" at the top. "nav_order" sets the order.
+     ====================================================== -->
+<div id="header">
+  <div class="container header-inner">
+
+    <a href="{{ '/' | relative_url }}" class="logo-link" title="Back to the home page">
+      <img src="{{ site.logo }}" alt="{{ site.title }}" class="logo">
+    </a>
+
+    <details class="menu" id="site-menu">
+      <summary>Menu</summary>
+      <ul>
+        {%- assign nav_pages = site.pages | where: "nav", true | sort: "nav_order", "last" -%}
+        {%- for p in nav_pages %}
+        <li><a href="{{ p.url | relative_url }}"{% if p.url == page.url %} class="current"{% endif %}>{{ p.menu_title | default: p.title }}</a></li>
+        {%- endfor %}
+      </ul>
+    </details>
+
+  </div>
+</div>

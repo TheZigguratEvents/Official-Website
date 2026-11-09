@@ -1,0 +1,13 @@
+date,time,title,location,price,bands,poster_image,poster_artist,poster_image_2,poster_artist_2,poster_image_3,poster_artist_3,ticket_link,description
+2026-06-20,7:00 PM,Summer Kickoff,"The Backyard Stage, 123 Example St",$10,The Example Band; Placeholder Pines,images/posters/summer-kickoff.jpg,Poster Artist Name,,,,,,"REPLACE THIS SAMPLE SHOW. Describe the night here.
+
+A blank line inside the quotes starts a new paragraph."
+2026-09-05,8:00 PM,Labor Day Weekender,"The Backyard Stage, 123 Example St",$10,Sample Static; The Visiting Act,images/posters/labor-day.jpg,Poster Artist Name,,,,,,REPLACE THIS SAMPLE SHOW. Describe the night here.
+2026-10-31,8:00 PM,Halloween House Show,"Example Hall, 456 Sample Ave",$12,The Example Band; Sample Static; Placeholder Pines,images/posters/halloween.jpg,Poster Artist Name,images/posters/halloween-alt.jpg,Second Artist Name,,,,"REPLACE THIS SAMPLE SHOW. This one has a second poster, so both appear on the show's page with their artists credited."
+2026-11-21,7:30 PM,Fall Showcase,"Example Hall, 456 Sample Ave",$12 advance / $15 door,Placeholder Pines; Sample Static; Guest Band Name,images/posters/fall-showcase.jpg,Poster Artist Name,images/posters/fall-showcase-alt-1.jpg,Second Artist Name,images/posters/fall-showcase-alt-2.jpg,Third Artist Name,https://www.example.com/tickets,"REPLACE THIS SAMPLE SHOW. The description only appears on the show's own page.
+
+You can use simple HTML here, like <b>bold</b> or <a href=""contact.html"">a link</a>. Inside a CSV cell, type two double-quotes to get one, as in that link.
+
+Doors at 7:00, music at 7:30. All ages."
+2026-12-12,8:00 PM,Winter Warmer,"The Backyard Stage, 123 Example St",Free,The Example Band; The Visiting Act,images/posters/winter-warmer.jpg,Poster Artist Name,,,,,,REPLACE THIS SAMPLE SHOW. Describe the night here.
+2027-01-16,7:00 PM,New Year Bash,"Example Hall, 456 Sample Ave",15,The Example Band; Placeholder Pines; Sample Static,,,,,,,,"REPLACE THIS SAMPLE SHOW. This show has no poster yet, so the default poster is used. Its price was typed as a plain number, so a $ is added."

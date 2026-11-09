@@ -1,0 +1,18 @@
+---
+layout: null
+permalink: /data/images.json
+---
+{%- comment -%}
+  DON'T EDIT THIS FILE.
+  When the site builds, this becomes a list of every image file in the
+  site. The photo carousels use it to find the photos in their folder.
+{%- endcomment -%}
+{%- assign image_types = ".jpg,.jpeg,.png,.gif,.webp,.avif" | split: "," -%}
+{%- assign found = "" -%}
+{%- for file in site.static_files -%}
+  {%- assign ext = file.extname | downcase -%}
+  {%- if image_types contains ext -%}
+    {%- assign found = found | append: file.path | append: "*" -%}
+  {%- endif -%}
+{%- endfor -%}
+{{ found | split: "*" | jsonify }}

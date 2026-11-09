@@ -1,0 +1,92 @@
+# =====================================================================
+#  SITE SETTINGS
+#  ---------------------------------------------------------------------
+#  Edit the values to the RIGHT of each colon. Keep the quotes.
+#  After you save this file on GitHub, the site rebuilds in 1-2 minutes.
+#  Lines starting with # are notes and are ignored.
+# =====================================================================
+
+
+# ---------------------------------------------------------------------
+#  1. BUSINESS NAME
+# ---------------------------------------------------------------------
+title: "Your Show Co."                       # Shown in browser tabs and the footer
+description: "Live shows, house bands, and good nights out."   # Shown in Google results
+
+
+# ---------------------------------------------------------------------
+#  2. YOUR CUSTOM DOMAIN
+#  Put your domain here AND in the file named CNAME (no https:// there).
+# ---------------------------------------------------------------------
+url: "https://www.your-domain.com"
+baseurl: ""                                  # Leave empty when using a custom domain
+
+
+# ---------------------------------------------------------------------
+#  3. LOGO + BROWSER-TAB ICON
+#  Replace these image files with your own (keep the same names),
+#  or change the paths here to point at your files.
+# ---------------------------------------------------------------------
+logo: "images/logo/logo.png"                 # Top-left of every page
+favicon: "images/logo/favicon.png"           # Browser tab icon (square, 32x32 or larger)
+
+
+# ---------------------------------------------------------------------
+#  4. CONTACT INFO
+# ---------------------------------------------------------------------
+email: "hello@your-domain.com"
+instagram: "yourshowco"                      # Username only, without the @
+interest_form_url: "https://forms.gle/REPLACE-WITH-YOUR-GOOGLE-FORM-LINK"
+
+
+# ---------------------------------------------------------------------
+#  5. CONTACT FORM + MAILING LIST (free, through Web3Forms)
+#  1) Go to https://web3forms.com and enter the email address that
+#     should receive messages. They email you an "access key".
+#  2) Paste that key between the quotes below.
+#  Both forms on the Contact page will then email you.
+# ---------------------------------------------------------------------
+web3forms_access_key: ""
+form_action: "https://api.web3forms.com/submit"
+
+
+# ---------------------------------------------------------------------
+#  6. SHOWS, BANDS AND PHOTOS
+# ---------------------------------------------------------------------
+home_upcoming_shows: 3             # How many upcoming shows the Main Page lists
+past_shows_order: "oldest_first"   # "oldest_first" or "newest_first"
+currency_symbol: "$"               # Added when a price is typed as a plain number (10 -> $10)
+carousel_seconds: 5                # Seconds each photo stays up in the carousels
+default_poster: "images/posters/default-poster.jpg"      # Used when a show has no poster
+default_band_logo: "images/band-logos/default-logo.png"  # Used when a band has no logo
+
+
+# ---------------------------------------------------------------------
+#  7. BLOG
+# ---------------------------------------------------------------------
+timezone: "America/New_York"       # Your time zone, for blog post times
+post_date_format: "%B %-d, %Y at %-I:%M %p"    # Looks like: November 5, 2026 at 3:30 PM
+
+
+# =====================================================================
+#  TECHNICAL SETTINGS — you normally won't need to change anything below.
+# =====================================================================
+markdown: kramdown
+permalink: /blog/:year/:month/:day/:title:output_ext
+exclude:
+  - README.md
+  - LICENSE
+  - Gemfile
+  - Gemfile.lock
+  - vendor
+defaults:
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "default"
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
