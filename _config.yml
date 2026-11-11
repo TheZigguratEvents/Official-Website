@@ -18,7 +18,7 @@ description: "Seattle DIY show production and recording studio"   # Shown in Goo
 #  2. YOUR CUSTOM DOMAIN
 #  Put your domain here AND in the file named CNAME (no https:// there).
 # ---------------------------------------------------------------------
-url: "https://www.your-domain.com"
+url: "https://ziggurat.productions"
 baseurl: ""                                  # Leave empty when using a custom domain
 
 
