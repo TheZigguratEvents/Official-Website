@@ -532,7 +532,7 @@ h3 {
 .carousel { margin: 10px 0 30px; }
 .carousel-frame {
   position: relative;
-  aspect-ratio: 16 / 7;          /* width / height of the slideshow */
+  aspect-ratio: 16 / 9;          /* width / height of the slideshow */
   overflow: hidden;
   background: var(--lapis-dark);
   border: 10px ridge var(--gold);
