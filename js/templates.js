@@ -168,7 +168,7 @@ window.TEMPLATES = {
   /* ---------------------------------------------------------------
      Messages shown when a list is empty or a page isn't found
      --------------------------------------------------------------- */
-  noUpcomingShows: () => `<p class="notice">No upcoming shows right now. Check back soon, or join our <a href="contact.html">mailing list</a>!</p>`,
+  noUpcomingShows: () => `<p class="notice">We don't have anything to shill at the moment. Check back soon, or join our <a href="contact.html">mailing list</a>!</p>`,
   noPastShows:     () => `<p class="notice">No past shows yet.</p>`,
   noBands:         () => `<p class="notice">No house bands listed yet.</p>`,
   showNotFound:    () => `<h1 class="page-title">Show Not Found</h1><p>We couldn't find that show. <a href="upcoming-shows.html">See all upcoming shows &raquo;</a></p>`,
