@@ -10,8 +10,8 @@ Alex Phelps (M20), resident of The Ziggurat, was spotted placing a single-bagged
 
 **"I have made a severe and continuous lapse in judgement, and have begun ziplocking my frozen produce.**
 
-While we were disappointed in discovering our friend's treachery, we were assuaged by his dispersal of pertinent wisdon:
+While we were disappointed in discovering our friend's treachery, we were assuaged by his dispersal of pertinent wisdom:
 
-As Phelps put it, **"Go to bed, itchy ass: wake up sticky finger."**
+**"Go to bed, itchy ass: wake up sticky finger."**
 
 This leaves us with more questions than answers.
